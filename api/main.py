@@ -29,5 +29,5 @@ def cantidad_filmaciones_mes(mes: str) -> dict:
     if cantidad_filamaciones.empty:
         return {"message": f"No hay filmaciones para el mes de {mes}."}
 
-    return cantidad_filamaciones.to_dict(orient='records')
+    return {"cantidad_filamaciones": cantidad_filamaciones.to_dict(orient='records')}
 
