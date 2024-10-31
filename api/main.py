@@ -28,6 +28,8 @@ def cantidad_filmaciones_mes(mes: str) -> dict:
     
     if cantidad_filamaciones.empty:
         return {"message": f"No hay filmaciones para el mes de {mes}."}
+    
+    cantidad_filamaciones = len(cantidad_filamaciones)
 
     return {"cantidad": f"{cantidad_filamaciones} películas fueron estrenadas en los meses de {mes.capitalize()}"}
 
