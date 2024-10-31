@@ -10,10 +10,24 @@ meses = {
             'agosto':8, 'septiembre':9, 'octubre':10, 'noviembre': 11, 'diciembre': 12
 }
 
-
-
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"Hola": "Mundo"}
 
+@app.get("/cantidad_filmaciones_mes")
+def cantidad_filmaciones_mes(mes: str) -> dict:
+    
+    if not mes.isalpha() or mes not in meses:
+        return {"error": "Por favor, ingresa un mes en español válido."}
+    
+    mes = mes.strip().lower()
+
+    mes_numero = meses[mes]
+
+    cantidad_filamaciones = movies_df[movies_df['release_date'].dt.month == mes_numero]
+    
+    if cantidad_filamaciones.empty:
+        return {"message": f"No hay filmaciones para el mes de {mes}."}
+
+    return cantidad_filamaciones.to_dict(orient='records')
 
