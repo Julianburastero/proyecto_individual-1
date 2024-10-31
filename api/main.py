@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import pandas as pd
 
-movies_df = pd.read_parquet('b:/proyecto_individual_1/data_post_etl/movies/movies_dataset_etl.parquet')
+movies_df = pd.read_parquet('data_post_etl/movies/movies_dataset_etl.parquet')
 
 app = FastAPI()
 
@@ -10,6 +10,10 @@ meses = {
             'agosto':8, 'septiembre':9, 'octubre':10, 'noviembre': 11, 'diciembre': 12
 }
 
+
+
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
+
+
