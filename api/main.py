@@ -38,12 +38,12 @@ def read_root():
 @app.get("/cantidad_filmaciones_mes")
 async def cantidad_filmaciones_mes(mes: str) -> dict:
 
+    # Limpiamos y convertimos el mes a minúsculas:
+    mes = mes.strip().lower()
+
     # Verificamos si el mes ingresado es válido (solo letras y un mes en español existente):
     if not mes.isalpha() or mes not in meses:
         return {"error": "Por favor, ingresa un mes en español válido."}
-    
-    # Limpiamos y convertimos el mes a minúsculas:
-    mes = mes.strip().lower()
 
     # Asignamos el número correspondiente al mes:
     mes_numero = meses[mes]
@@ -178,7 +178,7 @@ async def obtener_actor(actor: str) -> dict:
     # Calculamos la cantidad de películas y las ganancias:
     cantidad_peliculas = len(ids_peliculas_actor)
     ganancia = round(movies_df[movies_df['id'].isin(ids_peliculas_actor)]['return'].sum(), 2)
-    promedio_ganancia = round(movies_df[movies_df['id'].isin(ids_peliculas_actor)]['revenue'].mean(), 2)
+    promedio_ganancia = round(movies_df[movies_df['id'].isin(ids_peliculas_actor)]['return'].mean(), 2)
 
     # Devolvemos la información:
     return {"Mensaje de salida": f"El actor {actor.capitalize()} ha participado en {cantidad_peliculas} películas, el mismo ha conseguido un retorno de {ganancia} con un promedio de {promedio_ganancia} por filmación"}
