@@ -1,4 +1,4 @@
-# Proyecto recomendador de peliculas
+# Proyecto Api: Sistema de recomendación de peliculas
 
 ## índice
 
