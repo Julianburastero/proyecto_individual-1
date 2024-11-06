@@ -160,7 +160,7 @@ La API ofrece los siguientes endpoints:
 
 ## Contacto
 
-- **Correo electrónico**: julianburastero@.com
+- **Correo electrónico**: julianburastero@hotmail.com
 - **LinkedIn**: [Ir a Linkedin](https://www.linkedin.com/in/julian-burastero-26058320b/)
 - **GitHub**: [Ir a Github](https://github.com/Julianburastero)
 - **Contribuir al Proyecto**: Si quieres contribuir, abre un Pull Request o abre un Issue [Ir a Github Issues](https://github.com/Julianburastero/proyecto_individual-1/issues).
